@@ -1,14 +1,28 @@
-/*before 사용해서 이미지*/
-.btnContainer {
+button {
   display: flex;
-  flex-direction: column;
-}
-
-.btnContainer button {
+  align-items: center;
   border: none;
   cursor: pointer;
   width: 100px;
   height: 50px;
   margin: 10px;
   border-radius: 1rem;
+  gap: 0.5rem;
+}
+
+button img {
+  width: 32px;
+  height: 32px;
+}
+
+.rock {
+  border-left: 3px solid #3776dc;
+}
+
+.scissors {
+  border-left: 3px solid #22c96a;
+}
+
+.paper {
+  border-left: 3px solid #eecf43;
 }

@@ -1,15 +1,15 @@
+import { useState } from "react";
 import Card from "./components/Card";
 import Button from "./components/Button";
-import { useState } from "react";
 import css from "./css/App.module.css";
 
 function App() {
   const choices = ["가위", "바위", "보"];
-  // const choices = ["scissors", "rock", "paper"];
   const choicesMap = { 가위: 0, 바위: 1, 보: 2 };
+
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
-  const [result, setResult] = useState("선택하세요");
+  const [result, setResult] = useState();
 
   const handleUserChoice = (choice) => {
     const randomIdx = Math.floor(Math.random() * choices.length);

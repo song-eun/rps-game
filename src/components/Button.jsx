@@ -3,10 +3,10 @@ import rockImg from "../assets/rock.png";
 import scissorsImg from "../assets/scissors.png";
 import css from "../css/Button.module.css";
 
-const imageMap = {
-  보: paperImg,
-  가위: scissorsImg,
-  바위: rockImg,
+const choiceMap = {
+  바위: { label: "rock", image: rockImg },
+  보: { label: "paper", image: paperImg },
+  가위: { label: "scissors", image: scissorsImg },
 };
 
 const Button = ({ choice, handleUserChoice }) => {
@@ -14,15 +14,9 @@ const Button = ({ choice, handleUserChoice }) => {
     handleUserChoice(choice);
   };
 
-  const labelMap = {
-    바위: "rock",
-    보: "paper",
-    가위: "scissors",
-  };
-
   return (
-    <button className={css[labelMap[choice]]} onClick={handleBtn}>
-      <img src={imageMap[choice]} alt={choice} />
+    <button className={css[choiceMap[choice].label]} onClick={handleBtn}>
+      <img src={choiceMap[choice].image} alt={choice} />
       {choice}
     </button>
   );

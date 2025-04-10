@@ -15,7 +15,7 @@ const Card = ({ player, choice, result }) => {
 
   const getResultClass = () => {
     if (result === "이겼습니다.") return css.win;
-    else return css.lose;
+    else if (result === "졌습니다.") return css.lose;
   };
 
   return (

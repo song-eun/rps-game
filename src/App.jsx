@@ -9,7 +9,7 @@ function App() {
 
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(null);
 
   const handleUserChoice = (choice) => {
     const randomIdx = Math.floor(Math.random() * choices.length);
@@ -36,13 +36,19 @@ function App() {
     else return result;
   };
 
+  const resetGame = () => {
+    setUserChoice(null);
+    setComputerChoice(null);
+    setResult(null);
+  };
+
   return (
     <>
       <div className={css.container}>
         <h1>가위바위보 게임</h1>
         <main>
           <Card player="user" choice={userChoice} result={result} />
-          <div className="controls">
+          <div className={css.controls}>
             {choices.map((choice) => (
               <Button
                 key={choice}
@@ -50,6 +56,9 @@ function App() {
                 choice={choice}
               />
             ))}
+            <button className={css.resetBtn} onClick={resetGame}>
+              다시하기
+            </button>
           </div>
           <Card
             player="computer"

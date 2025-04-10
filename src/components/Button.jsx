@@ -15,7 +15,10 @@ const Button = ({ choice, handleUserChoice }) => {
   };
 
   return (
-    <button className={css[choiceMap[choice].label]} onClick={handleBtn}>
+    <button
+      className={`${css.button} ${css[choiceMap[choice].label]}`}
+      onClick={handleBtn}
+    >
       <img src={choiceMap[choice].image} alt={choice} />
       {choice}
     </button>

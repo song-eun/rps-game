@@ -13,17 +13,16 @@ const imageMap = {
 const Card = ({ player, choice, result }) => {
   const imgSrc = imageMap[choice] || nullImg;
 
-  const compuerResult = () => {
-    if (result === "이겼습니다.") return "졌습니다.";
-    else if (result === "졌습니다.") return "이겼습니다.";
-    else return result;
+  const getResultClass = () => {
+    if (result === "이겼습니다.") return css.win;
+    else return css.lose;
   };
 
   return (
-    <div className={`${css[player]} ${css.card}`}>
+    <div className={`${css[player]} ${css.card} ${getResultClass()}`}>
       <span>{player === "user" ? "사용자" : "상대선수"}</span>
       <img src={imgSrc} alt="choice" />
-      {player === "computer" ? compuerResult() : result}
+      <p>{result}</p>
     </div>
   );
 };

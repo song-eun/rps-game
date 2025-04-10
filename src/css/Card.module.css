@@ -17,3 +17,15 @@
 .card img {
   width: 100%;
 }
+
+.user.win {
+  background-color: #257ebd35;
+}
+
+.computer.win {
+  background-color: #e789463b;
+}
+
+.lose {
+  opacity: 0.3;
+}

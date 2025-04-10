@@ -30,6 +30,12 @@ function App() {
     }
   };
 
+  const compuerResult = () => {
+    if (result === "이겼습니다.") return "졌습니다.";
+    else if (result === "졌습니다.") return "이겼습니다.";
+    else return result;
+  };
+
   return (
     <>
       <div className={css.container}>
@@ -45,7 +51,11 @@ function App() {
               />
             ))}
           </div>
-          <Card player="computer" choice={computerChoice} result={result} />
+          <Card
+            player="computer"
+            choice={computerChoice}
+            result={compuerResult()}
+          />
         </main>
         <p>
           버튼을 클릭하여 가위, 바위, 보 중 하나를 선택하세요. <br />

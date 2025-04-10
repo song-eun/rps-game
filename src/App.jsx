@@ -10,13 +10,19 @@ function App() {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [result, setResult] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleUserChoice = (choice) => {
-    const randomIdx = Math.floor(Math.random() * choices.length);
-
+    if (isPlaying) return;
+    setIsPlaying(true);
     setUserChoice(choice);
-    setComputerChoice(choices[randomIdx]);
-    setResult(getResult(choice, choices[randomIdx]));
+
+    setTimeout(() => {
+      const randomIdx = Math.floor(Math.random() * choices.length);
+      setComputerChoice(choices[randomIdx]);
+      setResult(getResult(choice, choices[randomIdx]));
+      setIsPlaying(false);
+    }, 300);
   };
 
   const getResult = (user, computer) => {
@@ -54,6 +60,7 @@ function App() {
                 key={choice}
                 handleUserChoice={handleUserChoice}
                 choice={choice}
+                disabled={isPlaying}
               />
             ))}
             <button className={css.resetBtn} onClick={resetGame}>

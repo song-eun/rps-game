@@ -9,7 +9,7 @@ const choiceMap = {
   가위: { label: "scissors", image: scissorsImg },
 };
 
-const Button = ({ choice, handleUserChoice }) => {
+const Button = ({ choice, handleUserChoice, disabled }) => {
   const handleBtn = () => {
     handleUserChoice(choice);
   };
@@ -18,6 +18,7 @@ const Button = ({ choice, handleUserChoice }) => {
     <button
       className={`${css.button} ${css[choiceMap[choice].label]}`}
       onClick={handleBtn}
+      disabled={disabled}
     >
       <img src={choiceMap[choice].image} alt={choice} />
       {choice}

@@ -5,9 +5,9 @@ import scissorsImg from "../assets/scissors.png";
 import css from "../css/Card.module.css";
 
 const imageMap = {
-  paper: paperImg,
-  scissors: scissorsImg,
-  rock: rockImg,
+  보: paperImg,
+  가위: scissorsImg,
+  바위: rockImg,
 };
 
 const Card = ({ player, choice, result }) => {

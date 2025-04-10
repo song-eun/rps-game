@@ -4,9 +4,9 @@ import { useState } from "react";
 import css from "./css/App.module.css";
 
 function App() {
-  // const choices = ["가위", "바위", "보"];
-  const choices = ["scissors", "rock", "paper"];
-  const choicesMap = { scissors: 0, rock: 1, paper: 2 };
+  const choices = ["가위", "바위", "보"];
+  // const choices = ["scissors", "rock", "paper"];
+  const choicesMap = { 가위: 0, 바위: 1, 보: 2 };
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
   const [result, setResult] = useState("선택하세요");

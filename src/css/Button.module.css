@@ -1,0 +1,13 @@
+/*before 사용해서 이미지*/
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnContainer button {
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+}

@@ -1,0 +1,16 @@
+.card {
+  border: 7px solid #e78946;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 5rem;
+}
+
+.user {
+  border: 7px solid #257dbd;
+}
+
+.card img {
+  width: 300px;
+}

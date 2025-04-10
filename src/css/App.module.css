@@ -1,7 +1,11 @@
 /* :nth-of-type(1) 첫번째 카드 */
 .container {
+  height: 100vh;
+  text-align: center;
+}
+
+.container main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }

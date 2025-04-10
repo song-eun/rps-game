@@ -6,10 +6,12 @@
   text-align: center;
   padding: 1rem 5rem;
   width: 300px;
+  color: #e78946;
 }
 
 .user {
   border: 7px solid #257dbd;
+  color: #257dbd;
 }
 
 .card img {

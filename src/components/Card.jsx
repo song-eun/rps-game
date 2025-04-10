@@ -21,7 +21,7 @@ const Card = ({ player, choice, result }) => {
 
   return (
     <div className={`${css[player]} ${css.card}`}>
-      <span>{player}</span>
+      <span>{player === "user" ? "사용자" : "상대선수"}</span>
       <img src={imgSrc} alt="choice" />
       {player === "computer" ? compuerResult() : result}
     </div>

@@ -31,19 +31,28 @@ function App() {
   };
 
   return (
-    <div className={css.container}>
-      <Card player="user" choice={userChoice} result={result} />
-      <div className="controls">
-        {choices.map((choice) => (
-          <Button
-            key={choice}
-            handleUserChoice={handleUserChoice}
-            choice={choice}
-          />
-        ))}
+    <>
+      <div className={css.container}>
+        <h1>가위바위보 게임</h1>
+        <main>
+          <Card player="user" choice={userChoice} result={result} />
+          <div className="controls">
+            {choices.map((choice) => (
+              <Button
+                key={choice}
+                handleUserChoice={handleUserChoice}
+                choice={choice}
+              />
+            ))}
+          </div>
+          <Card player="computer" choice={computerChoice} result={result} />
+        </main>
+        <p>
+          버튼을 클릭하여 가위, 바위, 보 중 하나를 선택하세요. <br />
+          컴퓨터는 랜덤으로 선택합니다.
+        </p>
       </div>
-      <Card player="computer" choice={computerChoice} result={result} />
-    </div>
+    </>
   );
 }
 
